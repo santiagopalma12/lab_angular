@@ -1,1 +1,23 @@
-<p>results works!</p>
+<div class="container">
+  <h1>Resultados del Quiz</h1>
+  
+  <div class="summary">
+    <h2>Tu Puntuación: {{ score }} / {{ total }}</h2>
+    <p *ngIf="score === total">¡Felicidades! ¡Todas las respuestas son correctas!</p>
+    <p *ngIf="score < total && score > total / 2">¡Buen trabajo! Sigue así.</p>
+    <p *ngIf="score <= total / 2">¡Puedes mejorar! Sigue estudiando.</p>
+  </div>
+  
+  <div class="review">
+    <h3>Revisión de Respuestas</h3>
+    <ul>
+      <li *ngFor="let q of questions" [ngClass]="{'correct': q.userAnswer === q.correctAnswer, 'incorrect': q.userAnswer !== q.correctAnswer}">
+        <p class="question-text">{{ q.question }}</p>
+        <p>Tu respuesta: <span>{{ q.userAnswer || 'No respondida' }}</span></p>
+        <p *ngIf="q.userAnswer !== q.correctAnswer">Respuesta correcta: <span>{{ q.correctAnswer }}</span></p>
+      </li>
+    </ul>
+  </div>
+  
+  <a class="restart-button" routerLink="/">Jugar de Nuevo</a>
+</div>

@@ -7,8 +7,8 @@ import { QuizService, Question } from '../quiz.service';
   selector: 'app-question',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './question.component.html',
-  styleUrls: ['./question.component.css']
+  templateUrl: './question.html',
+  styleUrls: ['./question.css']
 })
 export class QuestionComponent implements OnInit {
   currentQuestion: Question | undefined;

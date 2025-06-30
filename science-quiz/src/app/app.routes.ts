@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { QuestionComponent } from './question/question.component';
-import { ResultsComponent } from './results/results.component';
+import { HomeComponent } from './home/home';
+import { QuestionComponent } from './question/question';
+import { ResultsComponent } from './results/results';
 
 export const routes: Routes = [
     // Ruta por defecto que muestra la página de inicio
