@@ -7,8 +7,8 @@ import { QuizService, Question } from '../quiz';
   selector: 'app-results',
   standalone: true,
   imports: [CommonModule, RouterLink],
-  templateUrl: './results.component.html',
-  styleUrls: ['./results.component.css']
+  templateUrl: './results.html',
+  styleUrls: ['./results.css']
 })
 export class ResultsComponent implements OnInit {
   score: number = 0;
