@@ -1,1 +1,25 @@
-<p>question works!</p>
+<div class="container" *ngIf="currentQuestion">
+  <div class="progress-bar">
+    <div class="progress" [style.width.%]="(questionIndex / totalQuestions) * 100"></div>
+    <span>Pregunta {{ questionIndex + 1 }} de {{ totalQuestions }}</span>
+  </div>
+
+  <h2>{{ currentQuestion.question }}</h2>
+  
+  <div class="options">
+    <button 
+      *ngFor="let option of currentQuestion.options"
+      (click)="selectOption(option)"
+      [ngClass]="getOptionClass(option)"
+      [disabled]="isAnswered">
+      {{ option }}
+    </button>
+  </div>
+  
+  <button 
+    class="submit-button"
+    (click)="submitAnswer()"
+    [disabled]="!selectedOption || isAnswered">
+    Confirmar
+  </button>
+</div>
